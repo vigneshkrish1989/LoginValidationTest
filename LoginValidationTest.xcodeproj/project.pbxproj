@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,9 +13,16 @@
 		B44FD044260B08C7009E5EF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B44FD042260B08C7009E5EF9 /* Main.storyboard */; };
 		B44FD046260B08CA009E5EF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44FD045260B08CA009E5EF9 /* Assets.xcassets */; };
 		B44FD049260B08CA009E5EF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B44FD047260B08CA009E5EF9 /* LaunchScreen.storyboard */; };
+		B44FD054260B5385009E5EF9 /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B44FD052260B5385009E5EF9 /* UserModel.xcdatamodeld */; };
+		B44FD057260B53C0009E5EF9 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44FD056260B53C0009E5EF9 /* PersistenceService.swift */; };
+		B44FD05A260B5498009E5EF9 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44FD058260B5498009E5EF9 /* User+CoreDataClass.swift */; };
+		B44FD05B260B5498009E5EF9 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44FD059260B5498009E5EF9 /* User+CoreDataProperties.swift */; };
+		CB4737417C898C9EC29FBD7E /* Pods_LoginValidationTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06D0BB9E04311CF07AD810FD /* Pods_LoginValidationTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		012EDF23731774E5F6EFD68C /* Pods-LoginValidationTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginValidationTest.release.xcconfig"; path = "Target Support Files/Pods-LoginValidationTest/Pods-LoginValidationTest.release.xcconfig"; sourceTree = "<group>"; };
+		06D0BB9E04311CF07AD810FD /* Pods_LoginValidationTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginValidationTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B44FD039260B08C7009E5EF9 /* LoginValidationTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginValidationTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B44FD03C260B08C7009E5EF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B44FD03E260B08C7009E5EF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +31,11 @@
 		B44FD045260B08CA009E5EF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B44FD048260B08CA009E5EF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B44FD04A260B08CA009E5EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B44FD053260B5385009E5EF9 /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
+		B44FD056260B53C0009E5EF9 /* PersistenceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		B44FD058260B5498009E5EF9 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		B44FD059260B5498009E5EF9 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		E76BBDF5CFB0B906ED6FF243 /* Pods-LoginValidationTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginValidationTest.debug.xcconfig"; path = "Target Support Files/Pods-LoginValidationTest/Pods-LoginValidationTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB4737417C898C9EC29FBD7E /* Pods_LoginValidationTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39BCF66ECE85A4274EBFE56E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E76BBDF5CFB0B906ED6FF243 /* Pods-LoginValidationTest.debug.xcconfig */,
+				012EDF23731774E5F6EFD68C /* Pods-LoginValidationTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3FBD3158D0F458F77E21774C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06D0BB9E04311CF07AD810FD /* Pods_LoginValidationTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B44FD030260B08C7009E5EF9 = {
 			isa = PBXGroup;
 			children = (
 				B44FD03B260B08C7009E5EF9 /* LoginValidationTest */,
 				B44FD03A260B08C7009E5EF9 /* Products */,
+				39BCF66ECE85A4274EBFE56E /* Pods */,
+				3FBD3158D0F458F77E21774C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +88,7 @@
 		B44FD03B260B08C7009E5EF9 /* LoginValidationTest */ = {
 			isa = PBXGroup;
 			children = (
+				B44FD055260B53A8009E5EF9 /* CoreData */,
 				B44FD03C260B08C7009E5EF9 /* AppDelegate.swift */,
 				B44FD03E260B08C7009E5EF9 /* SceneDelegate.swift */,
 				B44FD040260B08C7009E5EF9 /* ViewController.swift */,
@@ -63,8 +96,19 @@
 				B44FD045260B08CA009E5EF9 /* Assets.xcassets */,
 				B44FD047260B08CA009E5EF9 /* LaunchScreen.storyboard */,
 				B44FD04A260B08CA009E5EF9 /* Info.plist */,
+				B44FD052260B5385009E5EF9 /* UserModel.xcdatamodeld */,
 			);
 			path = LoginValidationTest;
+			sourceTree = "<group>";
+		};
+		B44FD055260B53A8009E5EF9 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B44FD058260B5498009E5EF9 /* User+CoreDataClass.swift */,
+				B44FD059260B5498009E5EF9 /* User+CoreDataProperties.swift */,
+				B44FD056260B53C0009E5EF9 /* PersistenceService.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +118,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B44FD04D260B08CA009E5EF9 /* Build configuration list for PBXNativeTarget "LoginValidationTest" */;
 			buildPhases = (
+				25E1CE22046DE0922C12C8AA /* [CP] Check Pods Manifest.lock */,
 				B44FD035260B08C7009E5EF9 /* Sources */,
 				B44FD036260B08C7009E5EF9 /* Frameworks */,
 				B44FD037260B08C7009E5EF9 /* Resources */,
+				A71AA713DF26458C3A080FCC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +179,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		25E1CE22046DE0922C12C8AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LoginValidationTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A71AA713DF26458C3A080FCC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoginValidationTest/Pods-LoginValidationTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoginValidationTest/Pods-LoginValidationTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoginValidationTest/Pods-LoginValidationTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B44FD035260B08C7009E5EF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B44FD054260B5385009E5EF9 /* UserModel.xcdatamodeld in Sources */,
+				B44FD057260B53C0009E5EF9 /* PersistenceService.swift in Sources */,
+				B44FD05B260B5498009E5EF9 /* User+CoreDataProperties.swift in Sources */,
 				B44FD041260B08C7009E5EF9 /* ViewController.swift in Sources */,
 				B44FD03D260B08C7009E5EF9 /* AppDelegate.swift in Sources */,
 				B44FD03F260B08C7009E5EF9 /* SceneDelegate.swift in Sources */,
+				B44FD05A260B5498009E5EF9 /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +374,7 @@
 		};
 		B44FD04E260B08CA009E5EF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E76BBDF5CFB0B906ED6FF243 /* Pods-LoginValidationTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +393,7 @@
 		};
 		B44FD04F260B08CA009E5EF9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 012EDF23731774E5F6EFD68C /* Pods-LoginValidationTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -338,6 +432,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B44FD052260B5385009E5EF9 /* UserModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B44FD053260B5385009E5EF9 /* UserModel.xcdatamodel */,
+			);
+			currentVersion = B44FD053260B5385009E5EF9 /* UserModel.xcdatamodel */;
+			path = UserModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B44FD031260B08C7009E5EF9 /* Project object */;
 }
