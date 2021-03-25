@@ -41,7 +41,7 @@ class LoginViewModel{
     
 }
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController {
     
 
     @IBOutlet weak var emailTxtField: UITextField!
@@ -85,36 +85,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
  */
         
     
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        if textField == emailTxtField{
-            emailValidateLbl.isHidden = false
-            if textField.text!.isValidEmail
-            {
-                emailValidateLbl.text = "Valid"
-            }
-            else
-            {
-                emailValidateLbl.text = "Not Valid"
-            }
-        }
-            
-        else if textField == passwordTxtField{
-            passwordValidateLbl.isHidden = false
-            if passwordTxtField.text!.isValidPassword{
-                print("not valid")
-                passwordValidateLbl.text = "Valid"
-                
-            }
-            else
-            {
-                passwordValidateLbl.text = "Not Valid"
-                print("valid")
-            }
-        }
-        return true
     }
  
     @IBAction func loginTap(_ sender: UIButton) {
@@ -170,6 +140,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     saveUserValue.created_date = finalDate
                     
                     PersistenceService.saveContext()
+                    
+                    DispatchQueue.main.async {
+                         let alert = UIAlertController(title: "Login Success", message: nil, preferredStyle: UIAlertController.Style.alert)
+                                                      alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                                           self.present(alert, animated: true, completion: nil)
+                    }
+     
                 }
             }
 
@@ -177,12 +154,52 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         else
         {
-            let alert = UIAlertController(title: "Login Failed!", message: "Please enter your registered email and password!", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Login Failed", message: "Please enter your registered email and password!", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+ 
 }
 
+extension ViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+         
+         if textField == emailTxtField{
+             emailValidateLbl.isHidden = false
+             if textField.text!.isValidEmail
+             {
+                 emailValidateLbl.text = "Valid"
+             }
+             else
+             {
+                 emailValidateLbl.text = "This is a invalid email"
+             }
+         }
+             
+         else if textField == passwordTxtField{
+             passwordValidateLbl.isHidden = false
+             if passwordTxtField.text!.isValidPassword{
+                 print("not valid")
+                 passwordValidateLbl.text = "Valid"
+                 
+             }
+             else
+             {
+                 passwordValidateLbl.text = "Passwords require at least 1 uppercase, 1 lowercase, and 1 number"
+                 print("valid")
+             }
+         }
+         return true
+     }
+       func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+            return true
+       }
+    
+}
